@@ -1,0 +1,109 @@
+/* ล้างค่าเริ่มต้นพื้นฐานและตั้งค่าฟอนต์ */
+body {
+    font-family: 'Sarabun', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+/* จัดการกล่องครอบปุ่มให้อยู่กึ่งกลางหน้าจอ */
+.button-container {
+    text-align: center;    /* จัดปุ่มอินไลน์ให้อยู่กึ่งกลาง */
+    width: 100%;           /* ขยายเต็มความกว้าง */
+    max-width: 1000px;     /* ปรับให้กว้างเท่ากับขนาดตารางของคุณ */
+    margin: 0 auto 20px auto; /* จัดกล่องให้อยู่ตรงกลางหน้า และเว้นระยะห่างจากตารางด้านล่าง */
+}
+
+/* =======================================================
+   1. ตกแต่งปุ่มลิงก์ด้านบน (โค้ดเดิมของคุณที่ปรับปรุงแล้ว)
+   ======================================================= */
+a[href="game_type.php"],
+a[href="index.php"], 
+a[href*="game_name"],
+a[href*="game_type"] {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: #4f46e5; /* สีม่วงน้ำเงินตามที่คุณเลือกไว้ */
+    color: #ffffff !important;
+    text-decoration: none !important; 
+    border-radius: 8pt;
+    font-weight: 600;
+    font-size: 14px;
+    /* margin-bottom: 20px; <-- เอาออกแล้วย้ายไปคุมที่กล่องครอบแทนเพื่อไม่ให้ระยะเยื้อง */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+/* เอฟเฟกต์เมื่อเมาส์ชี้ปุ่ม (Hover) */
+a[href="game_type.php"]:hover,
+a[href="index.php"]:hover,
+a[href*="game_name"]:hover,
+a[href*="game_type"]:hover {
+    background-color: #3b31d3; /* เปลี่ยนเป็นสีม่วงที่เข้มขึ้นเล็กน้อยเพื่อให้เข้าคู่กับสีปุ่มเดิม */
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(79, 70, 229, 0.3);
+}
+
+/* ตกแต่งโครงสร้างตาราง */
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* ทำให้ขอบโต๊ะโค้งตาม border-radius */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* หัวข้อตาราง (Header) */
+th {
+    background-color: #1e293b; /* สีเทาเข้มเกือบดำ ดูโปรเฟสชันนอล */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* แถวข้อมูล (Rows) */
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    font-size: 15px;
+    vertical-align: middle; /* จัดให้เนื้อหาอยู่กึ่งกลางแนวตั้ง */
+}
+
+/* ไฮไลท์สีสลับแถว (Striped rows) */
+tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* เอฟเฟกต์เมื่อเมาส์ชี้แถว */
+tr:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+/* ตกแต่งรูปภาพปกเกม */
+table img {
+    width: 80px !important; /* ปรับขนาดให้พอดีตาราง ไม่ใหญ่เทอะทะ */
+    height: 80px !important;
+    object-fit: cover; /* บังคับให้รูปไม่เบี้ยว */
+    border-radius: 10px; /* ทำมุมโค้งมนน่ารักๆ */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ตกแต่งคอลัมน์ราคา */
+td:nth-child(3) {
+    font-weight: bold;
+    color: #10b981; /* สีเขียวเงิน */
+    font-size: 16px;
+}
+td:nth-child(3)::before {
+    content: "฿"; /* ใส่สัญลักษณ์บาทอัตโนมัติ */
+    margin-right: 2
+}
