@@ -7,6 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 1. Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.php" class="brand-logo">GameStore</a>
+            <div class="nav-links,">
+                <a href="index.php" class="nav-btn">หน้าหลัก</a>
+                <a href="game_type.php" class="nav-btn">ประเภทเกม</a>
+                <a href="manage_game.php" class="nav-btn primary">จัดการข้อมูลเกม</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content Container -->
+    <main class="container">
     
     <?php
 
@@ -66,5 +81,13 @@
                 <?php
             }
         ?>
+
 </table>
+   
+</body>
+
+     <!-- 3. Footer -->
+    <footer class="footer">
+        &copy; <?= date('Y') ?> Game Store System. All rights reserved.
+    </footer>
 </html>
